@@ -1,7 +1,30 @@
+import 'package:deliverer/features/auth/auth_service.dart';
+import 'package:deliverer/views/screens/auth/sign_in.dart';
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  _fetch() async {
+    await Future.delayed(const Duration(seconds: 2));
+    AuthService.isLogged().then((value) {
+      if (!value) {
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (BuildContext context) => const SignInScreen()));
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _fetch();
+  }
 
   @override
   Widget build(BuildContext context) {

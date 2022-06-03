@@ -1,5 +1,7 @@
+import 'package:deliverer/common/helpers.dart';
 import 'package:deliverer/views/components/form/pass_field.dart';
 import 'package:deliverer/views/components/form/text_field.dart';
+import 'package:deliverer/views/screens/auth/complete_registration.dart';
 import 'package:deliverer/views/screens/auth/sign_in.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +13,8 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final TextEditingController _usernameCtr = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -57,9 +61,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             Wrap(
                               runSpacing: 10,
                               children: [
-                                const DTextField(
+                                DTextField(
                                   hint: 'Username',
                                   prefix: Icons.person,
+                                  controller: _usernameCtr,
                                 ),
                                 const DTextField(
                                   hint: 'Your email',
@@ -76,7 +81,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                                 Center(
                                   child: ElevatedButton(
-                                    onPressed: (() {}),
+                                    onPressed: _signUp,
                                     style: ElevatedButton.styleFrom(
                                         primary: theme.primaryColor,
                                         onPrimary: Colors.white),
@@ -142,5 +147,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
       ),
     );
+  }
+
+  _signUp() {
+    // |--------------------|
+    // | Sign up logic here |
+    // |--------------------|
+    push(context, CompleteRegistrationScreen(username: _usernameCtr.text),
+        replace: true);
   }
 }

@@ -44,7 +44,9 @@ class CompleteRegistrationScreen extends StatelessWidget {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         primary: Colors.black, onPrimary: Colors.white),
-                    onPressed: () {},
+                    onPressed: () {
+                      /// TODO: push to the first complete page
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(10),
                       child: Text(
