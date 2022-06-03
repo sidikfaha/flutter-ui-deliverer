@@ -1,5 +1,7 @@
+import 'package:deliverer/common/helpers.dart';
 import 'package:deliverer/features/auth/auth_service.dart';
 import 'package:deliverer/views/screens/auth/sign_in.dart';
+import 'package:deliverer/views/screens/into.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -10,12 +12,17 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  bool isFirstRun = true;
+
   _fetch() async {
     await Future.delayed(const Duration(seconds: 2));
+    if (mounted && isFirstRun) {
+      push(context, const IntroScreen(), replace: true);
+      return;
+    }
     AuthService.isLogged().then((value) {
       if (!value) {
-        Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => const SignInScreen()));
+        push(context, const SignInScreen(), replace: true);
       }
     });
   }

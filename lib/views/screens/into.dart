@@ -1,3 +1,5 @@
+import 'package:deliverer/common/helpers.dart';
+import 'package:deliverer/views/screens/auth/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -10,7 +12,9 @@ class IntroScreen extends StatelessWidget {
 
     return IntroductionScreen(
       pages: getPages(context),
-      onDone: () {},
+      onDone: () {
+        push(context, const SignInScreen(), replace: true);
+      },
       showBackButton: true,
       showNextButton: true,
       next: const Icon(Icons.arrow_right),
