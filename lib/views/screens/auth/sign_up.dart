@@ -40,69 +40,71 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
-                    child: SingleChildScrollView(
-                      child: Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Wrap(
-                          alignment: WrapAlignment.center,
-                          runSpacing: 20,
-                          children: [
-                            Center(
-                              child: Image.asset('assets/bro.png'),
-                            ),
-                            Text(
-                              'Hey newbie!',
-                              textAlign: TextAlign.center,
-                              style: theme.textTheme.headline2?.copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                    child: Center(
+                      child: SingleChildScrollView(
+                        child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Wrap(
+                            alignment: WrapAlignment.center,
+                            runSpacing: 20,
+                            children: [
+                              Center(
+                                child: Image.asset('assets/bro.png'),
                               ),
-                            ),
-                            Wrap(
-                              runSpacing: 10,
-                              children: [
-                                DTextField(
-                                  hint: 'Username',
-                                  prefix: Icons.person,
-                                  controller: _usernameCtr,
+                              Text(
+                                'Hey newbie!',
+                                textAlign: TextAlign.center,
+                                style: theme.textTheme.headline2?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
                                 ),
-                                const DTextField(
-                                  hint: 'Your email',
-                                  prefix: Icons.alternate_email,
-                                ),
-                                const DPassField(
-                                  hint: 'Your password',
-                                  prefix: Icons.lock,
-                                ),
-                                const DPassField(
-                                  hint: 'Confirm password',
-                                  prefix: Icons.check,
-                                  isLast: true,
-                                ),
-                                Center(
-                                  child: ElevatedButton(
-                                    onPressed: _signUp,
-                                    style: ElevatedButton.styleFrom(
-                                        primary: theme.primaryColor,
-                                        onPrimary: Colors.white),
-                                    child: const Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 30,
-                                        vertical: 10,
-                                      ),
-                                      child: Text(
-                                        'Register',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 24,
+                              ),
+                              Wrap(
+                                runSpacing: 10,
+                                children: [
+                                  DTextField(
+                                    hint: 'Username',
+                                    prefix: Icons.person,
+                                    controller: _usernameCtr,
+                                  ),
+                                  const DTextField(
+                                    hint: 'Your email',
+                                    prefix: Icons.alternate_email,
+                                  ),
+                                  const DPassField(
+                                    hint: 'Your password',
+                                    prefix: Icons.lock,
+                                  ),
+                                  const DPassField(
+                                    hint: 'Confirm password',
+                                    prefix: Icons.check,
+                                    isLast: true,
+                                  ),
+                                  Center(
+                                    child: ElevatedButton(
+                                      onPressed: _signUp,
+                                      style: ElevatedButton.styleFrom(
+                                          primary: theme.primaryColor,
+                                          onPrimary: Colors.white),
+                                      child: const Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 30,
+                                          vertical: 10,
+                                        ),
+                                        child: Text(
+                                          'Register',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 24,
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
