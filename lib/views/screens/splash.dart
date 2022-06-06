@@ -43,12 +43,12 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           Expanded(
             child: Center(
-              child: Container(
-                width: 80,
-                height: 80,
-                decoration: BoxDecoration(color: theme.primaryColor),
-              ),
-            ),
+                child: Image.asset(
+              'assets/logo.png',
+              height: 250,
+              width: 250,
+              fit: BoxFit.cover,
+            )),
           ),
           RichText(
             text: TextSpan(

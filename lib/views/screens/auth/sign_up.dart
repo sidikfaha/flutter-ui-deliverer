@@ -48,7 +48,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           runSpacing: 20,
                           children: [
                             Center(
-                              child: Image.network('https://picsum.photos/280'),
+                              child: Image.asset('assets/bro.png'),
                             ),
                             Text(
                               'Hey newbie!',

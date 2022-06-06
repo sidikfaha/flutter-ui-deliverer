@@ -37,8 +37,8 @@ class IntroScreen extends StatelessWidget {
       body:
           "Got some stuffs to be delivered ? Don't worry, a solution already ready for you.",
       image: Center(
-        child: Image.network(
-          'https://picsum.photos/200',
+        child: Image.asset(
+          'assets/amico.png',
         ),
       ),
       decoration: getDeco(context),
@@ -49,8 +49,8 @@ class IntroScreen extends StatelessWidget {
       body:
           "A delivery person at your disposal at the right place, at the right time.",
       image: Center(
-        child: Image.network(
-          'https://picsum.photos/200',
+        child: Image.asset(
+          'assets/agent.png',
         ),
       ),
       decoration: getDeco(context),
@@ -61,8 +61,8 @@ class IntroScreen extends StatelessWidget {
       body:
           "Have your relatives a joyfully drawn smile and an assured satisfaction.",
       image: Center(
-        child: Image.network(
-          'https://picsum.photos/200',
+        child: Image.asset(
+          'assets/pana.png',
         ),
       ),
       decoration: getDeco(context),

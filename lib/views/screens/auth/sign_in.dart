@@ -80,8 +80,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             runSpacing: 20,
                             children: [
                               Center(
-                                child:
-                                    Image.network('https://picsum.photos/280'),
+                                child: Image.asset('assets/login.png'),
                               ),
                               Text(
                                 'Remember us about you',
