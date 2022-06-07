@@ -10,6 +10,7 @@ class DTextField extends StatelessWidget {
   final TextEditingController? controller;
   final Function(String)? onChanged;
   final Function(String)? onSubmitted;
+  final String? Function(String?)? validator;
 
   const DTextField({
     Key? key,
@@ -22,11 +23,12 @@ class DTextField extends StatelessWidget {
     this.onSubmitted,
     this.isLast = false,
     this.controller,
+    this.validator,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       controller: controller,
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
@@ -50,7 +52,8 @@ class DTextField extends StatelessWidget {
       obscureText: obscureText,
       enableSuggestions: suggestions,
       onChanged: onChanged,
-      onSubmitted: onSubmitted,
+      validator: validator,
+      onFieldSubmitted: onSubmitted,
       textInputAction: isLast ? TextInputAction.go : TextInputAction.next,
     );
   }
