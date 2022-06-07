@@ -7,6 +7,7 @@ class DPassField extends StatefulWidget {
   final IconData? prefix;
   final Function(String)? onChanged;
   final Function(String)? onSubmitted;
+  final String? Function(String?)? validator;
 
   const DPassField({
     Key? key,
@@ -14,6 +15,7 @@ class DPassField extends StatefulWidget {
     this.isLast = false,
     this.onChanged,
     this.onSubmitted,
+    this.validator,
     this.prefix,
   }) : super(key: key);
 
@@ -30,6 +32,9 @@ class _DPassFieldState extends State<DPassField> {
       hint: widget.hint,
       obscureText: !see,
       prefix: widget.prefix ?? Icons.key,
+      validator: widget.validator,
+      onChanged: widget.onChanged,
+      onSubmitted: widget.onSubmitted,
       suffix: IconButton(
         onPressed: () {
           setState(() {
